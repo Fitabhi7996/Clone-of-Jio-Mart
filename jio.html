@@ -5,36 +5,129 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buy Grocery Online | Daily Needs Supermarket - JioMart</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+  />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <style>
       #nav1{
-        background-color: lightskyblue
+        background-color: rgb(60, 60, 235)
 
       }
       #nav1>div{
-        /* height: 80px;
-        width: 100%; */
+        height: 70px;
+        width: 100%;
+      }
+      #innernav>div{
+        height: 60px;
+        width: 80%;
+        margin: auto;
         display: flex;
         justify-content: space-between;
-        text-align: center;
+        padding-top: 5px;
       }
-      .logo{
-        width: 30%;
-        padding: 10px 15px;
-      }
-      .box{
-        width: 40%;
-        margin: 10px 20px;
-      }
+
       #nav2{
         background-color: lightgray;
       }
       #nav2>div{
-        display: flex;
-        justify-content: space-evenly;
+        height: 40px;
         width: 100%;
-        color: black;
+      }
+      #innernav2>div{
+        height: 60px;
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 5px;
+      }
+      #find{
+        height: 70px;
+        width: 80%;
+      }
+      #find>div{
+        height: 70px;
+        width: 100%;      
+        margin: auto;
+        display: flex;
+        justify-content: space-between;          
+      }
+      .photo{
+        height: 600px;
+        width: 98%;
+        margin: auto;
+      }
+      .photo>img{
+        height: 300px;
+        width: 100%;
+      }
+      .logo{
+        width: 10%;
+        padding-top: 10px;
+        padding-bottom: 20px;
+      }
+      .box{
+        height: 40px;
+        width: 60%;
+        margin: 10px 20px;
+      }
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      #carouselExampleSlidesOnly1{
+        height: 200px;
+        width: 100%; 
+       }
+    
+      .carousel-inner>div>img{
+        height: 150px;
+        width: auto;
       }
      
     </style>
@@ -42,49 +135,113 @@
 <body>
     <div id="navbar">
         <div id="nav1"> 
-            <div>
-                <img class="jiologo" src="C:\Users\Abhishek Ghodmare\Downloads\light1.png" alt="">
-                <input class="box" placeholder="Search essentials,gloceries,and more...">
-                <h4>Sign in / Sign up</h4>
-                <h4>Cart</h4>
+            <div id="innernav">
+              <div id="find">
+                <div>
+                  <img class="logo" src="C:\Users\Abhishek Ghodmare\Downloads\light1.png" alt="">
+                  <input class="box" placeholder="Search essentials,gloceries,and more...">
+                  <b style="padding-top: 20px;color: white;">Sign in / Sign up</b>
+                  <b style="padding-top: 20px;color: white;">Cart</b>
+                </div>
+              </div>
             </div>
 
         </div>
         <div id="nav2">
-            <div>
-                <h4>Groceries</h4>
-                <h4>Premium Fruits</h4>
-                <h4>Home & Kitchen</h4>
-                <h4>Fashion</h4>
-                <h4>Electronics</h4>
-                <h4>Beauty</h4>
-                <h4>Home Improvement</h4>
-                <h4>Sports,Toys & Luggage</h4>
+            <div id="innernav2">
+              <div>
+                <b>Groceries</b>
+                <b>Premium Fruits</b>
+                <b>Home & Kitchen</b>
+                <b>Fashion</b>
+                <b>Electronics</b>
+                <b>Beauty</b>
+                <b>Home Improvement</b>
+                <b>Sports,Toys & Luggage</b>
+              </div>
             </div>
 
         </div>
-       
-        <div id="navbar3">
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1667838765_1667233182_Biggest-Savings-on-Selected-Products_1680-x-320.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1667922746_1667839739_1667755395_Audio-Fest-JioMart-Carousel-Banner-23_08_2022_1.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1667923543_1667839104_1667755003_Android_Days_Banner_2_Desktop2.jpg" class="d-block w-100" alt="...">
-                  </div>
-                </div>
-              </div>
+            <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1667838765_1667233182_Biggest-Savings-on-Selected-Products_1680-x-320.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="swiper-slide"><img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1667922746_1667839739_1667755395_Audio-Fest-JioMart-Carousel-Banner-23_08_2022_1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="swiper-slide"><img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1667923543_1667839104_1667755003_Android_Days_Banner_2_Desktop2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="swiper-slide"><img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1668001258_Spices_1680x320.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="swiper-slide"><img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1667927358_Mom__Baby_Desktop.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="swiper-slide"><img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1667929616_1667842520_1667198739_Best-Selling-Kitchen_1680-x-320_6.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="swiper-slide"><img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1668015933_1667840599_Beauty-Banner_1680x320_12.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="swiper-slide"><img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1668000368_MUMBAI.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="swiper-slide"><img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1668064237_Casual-wear_HPMC_web.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="swiper-slide"><img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1667933117_1667841926_1667198956_HOME-FURNISHING-1680-320_11.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="swiper-slide"><img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1668016077_1667929856_1667842905_Fem-Hygiene-essential_1680X320_7.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="swiper-slide"><img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1668016077_1667929856_1667842905_Fem-Hygiene-essential_1680X320_7.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="swiper-slide"><img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1667930370_1667841642_Namkeens_1680x320_web_13.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="swiper-slide"><img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1667366245_Web_Mumbai_PremiumFruits.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+
+        <div class="photo">
+            <img style="padding-top: 20px;" src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1667281294_bLOCK_BUSTER_dEALS_1_Desktop.jpg">
+            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1667989922_Food-Granins_1680x320.jpg" >
+        </div>   
+        
+        <div id="carouselExampleSlidesOnly1" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1667365838_AU.jpg".j class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1667486706_Paytm_Postaid_1240x209.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1667486598_MobiKwik_1240x209.jpg" class="d-block w-100" alt="...">
+            </div>
+          </div>
         </div>
 
-        <div>
-            <img style="padding-top: 20px;" src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1667281294_bLOCK_BUSTER_dEALS_1_Desktop.jpg" alt="">
-        </div>
-       
-        
+
 
         
     </div>
