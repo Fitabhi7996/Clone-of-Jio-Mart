@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <style>
       #nav1{
-        background-color: rgb(60, 60, 235)
+        background-color: #007ef4
 
       }
       #nav1>div{
@@ -129,6 +129,21 @@
         height: 150px;
         width: auto;
       }
+      #container{
+            display: grid;
+            grid-template-columns: repeat(10,1fr);
+            grid-template-rows: auto;
+            gap: 20px;
+        }
+        #container>div>img{
+            width: 100%;
+        }
+
+        #container>div{
+            text-align: center;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; 
+        }
+
      
     </style>
 </head>
@@ -138,10 +153,10 @@
             <div id="innernav">
               <div id="find">
                 <div>
-                  <img class="logo" src="C:\Users\Abhishek Ghodmare\Downloads\light1.png" alt="">
+                  <img class="logo" src="https://i.ibb.co/9wpLXxS/light1.png" alt="">
                   <input class="box" placeholder="Search essentials,gloceries,and more...">
                   <b style="padding-top: 20px;color: white;">Sign in / Sign up</b>
-                  <b style="padding-top: 20px;color: white;">Cart</b>
+                  <a style="padding-top: 20px;" href="cart.html"><b style="color: white;">Cart</b></a>
                 </div>
               </div>
             </div>
@@ -162,7 +177,7 @@
             </div>
 
         </div>
-            <!-- Swiper -->
+
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide"><img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1667838765_1667233182_Biggest-Savings-on-Selected-Products_1680-x-320.jpg" class="d-block w-100" alt="...">
@@ -199,10 +214,10 @@
       <div class="swiper-pagination"></div>
     </div>
 
-    <!-- Swiper JS -->
+  
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
-    <!-- Initialize Swiper -->
+ 
     <script>
       var swiper = new Swiper(".mySwiper", {
         spaceBetween: 30,
@@ -241,10 +256,59 @@
           </div>
         </div>
 
+        <div>
+          <h4>Top Deals</h4>
+          <div id="container">
 
+          </div>
+          
+        </div>
 
         
     </div>
     
 </body>
 </html>
+
+<script>
+      let bag=[]
+    let cartItems=JSON.parse(localStorage.getItem("cartProducts"))||[];
+    let url = "https://636e36c8b567eed48ad68faa.mockapi.io/topdeals"
+    fetch(url)
+    .then((res)=> res.json())
+    .then((data)=> {
+        bag = data;
+        console.log(data);
+        displayCard(data);
+    });
+
+    function displayCard(data){
+        // document.querySelector("#container").innerHTML="";
+        data.forEach(function(elem){
+        let div = document.createElement("div")
+
+        let image = document.createElement("img")
+        image.setAttribute("src",elem.avatar)
+        let title = document.createElement("b")
+        title.innerText= elem.title
+        let cost = document.createElement("p");
+        cost.innerText="Price"+" "+elem.price+"/-"
+        let dis = document.createElement("p")
+        dis.innerText="Save"+" "+elem.save+"/-"
+        dis.style.color="green"
+
+        let btn = document.createElement("button")
+        btn.innerText="Add to Cart";
+        btn.style.backgroundColor="skyblue"
+        btn.addEventListener("click",function(){
+            cartItems.push(elem)
+            localStorage.setItem("cartProducts",JSON.stringify(cartItems))
+        })
+
+        div.append(image,title,cost,dis,btn)
+
+        document.querySelector("#container").append(div)
+        })
+        
+    }
+</script>

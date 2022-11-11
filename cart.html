@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Grocery Online | Daily Needs Supermarket - JioMart</title>
+    <style>
+        #nav1{
+        background-color: #007ef4
+
+      }
+      #nav1>div{
+        height: 70px;
+        width: 100%;
+      }
+      #innernav>div{
+        height: 60px;
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 5px;
+      }
+
+      #nav2{
+        background-color: lightgray;
+      }
+      #nav2>div{
+        height: 40px;
+        width: 100%;
+      }
+      #innernav2>div{
+        height: 60px;
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 5px;
+      }
+      #find{
+        height: 70px;
+        width: 80%;
+      }
+      #find>div{
+        height: 70px;
+        width: 100%;      
+        margin: auto;
+        display: flex;
+        justify-content: space-between;          
+      }
+      .photo{
+        height: 600px;
+        width: 98%;
+        margin: auto;
+      }
+      .photo>img{
+        height: 300px;
+        width: 100%;
+      }
+      .logo{
+        width: 10%;
+        padding-top: 10px;
+        padding-bottom: 20px;
+      }
+      .box{
+        height: 40px;
+        width: 60%;
+        margin: 10px 20px;
+      }
+    #container{
+            display: grid;
+            grid-template-columns: repeat(10,1fr);
+            grid-template-rows: auto;
+            gap: 20px;
+    }
+    #container>div>img{
+            width: 100%;
+    }
+
+    #container>div{
+            text-align: center;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div id="nav1"> 
+            <div id="innernav">
+              <div id="find">
+                <div>
+                    <img class="logo"  src="https://i.ibb.co/9wpLXxS/light1.png" >
+                  <input class="box" placeholder="Search essentials,gloceries,and more...">
+                  <b style="padding-top: 20px;color: white;">Sign in / Sign up</b>
+                  <b style="padding-top: 20px;color: white;">Cart</b>
+                </div>
+              </div>
+            </div>
+
+        </div>
+        <div id="nav2">
+            <div id="innernav2">
+              <div>
+                <b>Groceries</b>
+                <b>Premium Fruits</b>
+                <b>Home & Kitchen</b>
+                <b>Fashion</b>
+                <b>Electronics</b>
+                <b>Beauty</b>
+                <b>Home Improvement</b>
+                <b>Sports,Toys & Luggage</b>
+              </div>
+            </div>
+
+        </div>
+    <div id="container"></div>
+    <h3></h3>
+    <h2 style="color: rgb(58, 182, 58);"></h2>
+</body>
+</html>
+
+<script>
+    let cartItems=JSON.parse(localStorage.getItem("cartProducts"));
+    console.log(cartItems);
+    displayCard(cartItems)
+
+    let totalCost=cartItems.reduce((acc,ele)=> acc+ele.price,0)
+    console.log(totalCost);
+    document.querySelector("h3").innerHTML="<b>Total Amount</b>"+" "+totalCost+"/-"
+
+    let totalsave=cartItems.reduce((acc,ele)=> acc+ele.save,0)
+    console.log(totalCost);
+    document.querySelector("h2").innerHTML="<b>Save</b>"+" "+totalsave+"/-"
+
+
+    function displayCard(data){
+        document.querySelector("#container").innerHTML="";
+        data.forEach(function(elem){
+        let div = document.createElement("div")
+
+        let image = document.createElement("img")
+        image.setAttribute("src",elem.avatar)
+        let title = document.createElement("b")
+        title.innerText= elem.title
+        let cost = document.createElement("p");
+        cost.innerText="Price"+" "+elem.price+"/-"
+        let dis = document.createElement("p")
+        dis.innerText="Save"+" "+elem.save+"/-"
+
+        div.append(image,title,cost,dis)
+
+        document.querySelector("#container").append(div)
+        })
+        
+    }
+</script>
