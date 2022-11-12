@@ -134,6 +134,7 @@
             grid-template-columns: repeat(10,1fr);
             grid-template-rows: auto;
             gap: 20px;
+            padding-bottom: 20px;
         }
         #container>div>img{
             width: 100%;
@@ -144,7 +145,30 @@
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; 
         }
 
-     
+        #foot{
+          height: 380px;
+          width: 100%;
+          background-color: lightgray;
+        }
+        #foot>div{
+          display: flex;
+          justify-content: space-evenly;
+        }
+
+        #foot>div>div{
+          height: 250px;
+          width: 18%;
+          padding-top: 50px;
+        }
+        #foot>div>div{
+          font-size: smaller;
+        }
+
+        .end{
+          background-color: lightgray;
+          display: flex;
+          justify-content: space-evenly;
+        }
     </style>
 </head>
 <body>
@@ -266,6 +290,49 @@
 
         
     </div>
+
+    <div id="foot">
+      <div>
+      <div>
+        <b>MOST POPULAR CATEGORIES</b>
+        <div style="padding-top: 10px;">Staples</div>
+        <div>Beverages</div>
+        <div>Personal Care</div>
+        <div>Home Care</div>
+        <div>Fruits and Vegetables</div>
+        <div>Baby Care</div>
+        <div>Snacks & Branded Foods</div>
+        <div>Dairy & Bakery</div>
+      </div>
+      <div>
+        <b>CUSTOMER SERVICES</b>
+        <div style="padding-top: 10px;">About Us</div>
+        <div>FAQ</div>
+        <div>Terms and conditions</div>
+        <div>Privacy policy</div>
+        <div>E-waste Policy</div>
+        <div>Cancellation and return policy</div>        
+      </div>
+      <div>
+        <b>CONTACT US</b>
+        <div style="padding-top: 10px;">WhatsApp us : <b style="color: #007ef4 ;">70003 70003</b> </div>
+        <div style="padding-top: 10px;">Call us : <b style="color: #007ef4 ;">1800 890 1222</b> </div>
+        <div>8:00 AM to 8:00 PM, 365 days</div>
+        <div style="padding-top: 10px;">Please note that you are accessing the BETA Version of <b style="color: #007ef4 ;">www.jiomart.com</b> </div>
+        <div style="padding-top: 10px;">Should you encounter any bugs, glitches, lack of functionality, delayed deliveries, billing errors or other problems on the beta website, please email us on <b style="color: #007ef4;">cs@jiomart.com</b> </div>
+      
+        <div style="padding-top: 20px;"><b >DOWNLOAD APP</b></div>
+        <div style="padding-top: 20px;"><img src="https://www.jiomart.com/images/cms/wysiwyg/app-icons/play_store.png" >
+        <img src="https://www.jiomart.com/images/cms/wysiwyg/app-icons/ios_store.png">
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="end" >
+    <p>Best viewed on Microsoft Edge 81+, Mozilla Firefox 75+, Safari 5.1.5+, Google Chrome 80+</p>
+    <p>© 2022 All rights reserved. Reliance Retail Ltd.</p>
+  </div>
+
     
 </body>
 </html>
@@ -292,7 +359,7 @@
         let title = document.createElement("b")
         title.innerText= elem.title
         let cost = document.createElement("p");
-        cost.innerText="Price"+" "+elem.price+"/-"
+        cost.innerHTML="<b>₹</b>"+" "+elem.price+"/-"
         let dis = document.createElement("p")
         dis.innerText="Save"+" "+elem.save+"/-"
         dis.style.color="green"

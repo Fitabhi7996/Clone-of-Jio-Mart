@@ -59,9 +59,9 @@
         width: 100%;
       }
       .logo{
-        width: 10%;
+        /* width: 10%; */
         padding-top: 10px;
-        padding-bottom: 20px;
+        /* padding-bottom: 20px; */
       }
       .box{
         height: 40px;
@@ -91,7 +91,8 @@
             <div id="innernav">
               <div id="find">
                 <div>
-                    <img class="logo"  src="https://i.ibb.co/9wpLXxS/light1.png" >
+                    <a href="jio.html"><img class="logo" src="https://i.ibb.co/9wpLXxS/light1.png" width="120px" height="45px">  </a>
+                    
                   <input class="box" placeholder="Search essentials,gloceries,and more...">
                   <b style="padding-top: 20px;color: white;">Sign in / Sign up</b>
                   <b style="padding-top: 20px;color: white;">Cart</b>
@@ -123,15 +124,15 @@
 
 <script>
     let cartItems=JSON.parse(localStorage.getItem("cartProducts"));
-    console.log(cartItems);
+    // console.log(cartItems);
     displayCard(cartItems)
 
     let totalCost=cartItems.reduce((acc,ele)=> acc+ele.price,0)
-    console.log(totalCost);
+    // console.log(totalCost);
     document.querySelector("h3").innerHTML="<b>Total Amount</b>"+" "+totalCost+"/-"
 
     let totalsave=cartItems.reduce((acc,ele)=> acc+ele.save,0)
-    console.log(totalCost);
+    // console.log(totalsave);
     document.querySelector("h2").innerHTML="<b>Save</b>"+" "+totalsave+"/-"
 
 
@@ -144,10 +145,11 @@
         image.setAttribute("src",elem.avatar)
         let title = document.createElement("b")
         title.innerText= elem.title
-        let cost = document.createElement("p");
-        cost.innerText="Price"+" "+elem.price+"/-"
-        let dis = document.createElement("p")
+        let cost = document.createElement("h4");
+        cost.innerHTML="<b>₹</b>"+" "+elem.price+"/-"
+        let dis = document.createElement("h4")
         dis.innerText="Save"+" "+elem.save+"/-"
+        dis.style.color="green"
 
         div.append(image,title,cost,dis)
 
