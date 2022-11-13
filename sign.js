@@ -1,4 +1,4 @@
 function signinsucces(){
     alert("Sign in successful")
-    window.location.assign("jio.html")
+    window.location.assign("index.html")
 }
